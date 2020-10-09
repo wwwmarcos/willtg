@@ -16,4 +16,14 @@ var CommandMapping = []t.ImageConfig{
 		Color:     "#FFFFFF",
 		Command:   "/will",
 	},
+	t.ImageConfig{
+		Context: t.ImageContext{
+			Height: 720,
+			Width:  1280,
+		},
+		FontSize:  50,
+		ImagePath: "./files/michael-scott.jpg",
+		Color:     "#FFFFFF",
+		Command:   "/maico",
+	},
 }
