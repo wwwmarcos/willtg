@@ -27,7 +27,9 @@ func Handler(ctx context.Context, req Request) (Response, error) {
 		panic(err)
 	}
 
-	b.Handle(tb.OnText, c.Will)
+	b.Handle("/will", func(m *tb.Message) {
+		c.Will(m, b)
+	})
 
 	var u tb.Update
 	if err = json.Unmarshal([]byte(req.Body), &u); err == nil {
