@@ -4,7 +4,7 @@ deps:
 	go get -v -t -d ./...
 
 build:
-	env GOOS=linux go build -ldflags="-s -w" -o bin/hello telegram/main.go
+	env GOOS=linux go build -ldflags="-s -w" -o bin/telegram telegram/main.go
 
 clean:
 	rm -rf ./bin ./vendor Gopkg.lock
