@@ -1,7 +1,9 @@
 .PHONY: build clean deploy
 
+deps:
+	go get -v -t -d ./...
+
 build:
-	dep ensure -v
 	env GOOS=linux go build -ldflags="-s -w" -o bin/hello telegram/main.go
 
 clean:
