@@ -17,8 +17,8 @@ func Will(m *tb.Message, b *tb.Bot) {
 
 	imageConfig := &t.ImageConfig{
 		Context: t.ImageContext{
-			Height: 559,
-			Width:  898,
+			Height: 900,
+			Width:  1200,
 		},
 		FontSize:  30,
 		ImagePath: "./files/bc.jpg",
