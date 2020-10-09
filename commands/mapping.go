@@ -31,7 +31,7 @@ var CommandMapping = []t.ImageConfig{
 			Height: 335,
 			Width:  560,
 		},
-		FontSize:  50,
+		FontSize:  35,
 		ImagePath: "./files/dwight.jpg",
 		Color:     "#FFFFFF",
 		Command:   "/du",
