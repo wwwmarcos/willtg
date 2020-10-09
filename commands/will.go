@@ -21,7 +21,7 @@ func Will(m *tb.Message, b *tb.Bot) {
 			Width:  559,
 		},
 		FontSize:  30,
-		ImagePath: "files/bc.jpg",
+		ImagePath: "./files/bc.jpg",
 		Color:     "#FFFFFF",
 	}
 
@@ -33,7 +33,7 @@ func Will(m *tb.Message, b *tb.Bot) {
 	textOnImage := strings.Replace(m.Text, "/will", "", 1)
 
 	dc := gg.NewContext(imageConfig.Context.Width, imageConfig.Context.Height)
-	dc.LoadFontFace("files/font.ttf", imageConfig.FontSize)
+	dc.LoadFontFace("./files/font.ttf", imageConfig.FontSize)
 	dc.DrawImage(im, 0, 0)
 	dc.SetHexColor(imageConfig.Color)
 

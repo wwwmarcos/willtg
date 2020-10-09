@@ -11,7 +11,7 @@ package:
     - ./**
   include:
     - ./bin/**
-    - /files/**
+    - ./files/**
 
 functions:
   telegram:
