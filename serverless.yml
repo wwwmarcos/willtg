@@ -19,4 +19,4 @@ functions:
     events:
       - http:
           path: telegram
-          method: get
+          method: post
