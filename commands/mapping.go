@@ -28,8 +28,8 @@ var CommandMapping = []t.ImageConfig{
 	},
 	t.ImageConfig{
 		Context: t.ImageContext{
-			Height: 560,
-			Width:  335,
+			Height: 335,
+			Width:  560,
 		},
 		FontSize:  50,
 		ImagePath: "./files/dwight.jpg",
