@@ -41,7 +41,7 @@ var CommandMapping = []t.ImageConfig{
 			Height: 1080,
 			Width:  1920,
 		},
-		FontSize:  50,
+		FontSize:  100,
 		ImagePath: "./files/sasuske.jpg",
 		Color:     "#FFFFFF",
 		Command:   "/sasu",
