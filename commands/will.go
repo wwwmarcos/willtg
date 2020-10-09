@@ -17,8 +17,8 @@ func Will(m *tb.Message, b *tb.Bot) {
 
 	imageConfig := &t.ImageConfig{
 		Context: t.ImageContext{
-			Height: 898,
-			Width:  559,
+			Height: 559,
+			Width:  898,
 		},
 		FontSize:  30,
 		ImagePath: "./files/bc.jpg",
@@ -37,11 +37,19 @@ func Will(m *tb.Message, b *tb.Bot) {
 	dc.DrawImage(im, 0, 0)
 	dc.SetHexColor(imageConfig.Color)
 
+	writeBoxWidth := float64(imageConfig.Context.Width) / 2
+	writeboxHeight := float64(imageConfig.Context.Height) / 2
+	lineSpacing := 1.5
+	lineWidth := float64(500)
+
 	dc.DrawStringWrapped(
 		textOnImage,
-		float64(imageConfig.Context.Width)/2,
-		float64(imageConfig.Context.Height)/2,
-		0.5, 1, 500, 1.5, gg.AlignCenter)
+		writeBoxWidth,
+		writeboxHeight,
+		0.5, 1, // I will discover wtf is this
+		lineWidth,
+		lineSpacing,
+		gg.AlignCenter)
 
 	fileName := string(m.ID) + ".png"
 	filePath := path.Join(os.TempDir(), fileName)
