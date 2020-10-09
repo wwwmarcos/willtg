@@ -8,6 +8,7 @@ import (
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	c "github.com/eptaccio/willtg/commands"
+	t "github.com/eptaccio/willtg/types"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
@@ -27,10 +28,12 @@ func Handler(ctx context.Context, req Request) (Response, error) {
 		panic(err)
 	}
 
-	for _, cmd := range c.CommandMapping {
-		b.Handle(cmd.Command, func(m *tb.Message) {
-			c.WriteImage(m, b, cmd)
-		})
+	for _, command := range c.CommandMapping {
+		func(config t.ImageConfig) {
+			b.Handle(config.Command, func(m *tb.Message) {
+				c.WriteImage(m, b, config)
+			})
+		}(command)
 	}
 
 	var u tb.Update
