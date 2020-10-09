@@ -14,15 +14,9 @@ package:
     - /files/**
 
 functions:
-  hello:
-    handler: bin/hello
+  telegram:
+    handler: bin/telegram
     events:
       - http:
-          path: hello
-          method: get
-  world:
-    handler: bin/world
-    events:
-      - http:
-          path: world
+          path: telegram
           method: get
