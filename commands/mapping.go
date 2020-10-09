@@ -26,4 +26,14 @@ var CommandMapping = []t.ImageConfig{
 		Color:     "#FFFFFF",
 		Command:   "/maico",
 	},
+	t.ImageConfig{
+		Context: t.ImageContext{
+			Height: 560,
+			Width:  335,
+		},
+		FontSize:  50,
+		ImagePath: "./files/dwight.jpg",
+		Color:     "#FFFFFF",
+		Command:   "/du",
+	},
 }
