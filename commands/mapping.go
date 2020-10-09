@@ -51,7 +51,7 @@ var CommandMapping = []t.ImageConfig{
 			Height: 381,
 			Width:  680,
 		},
-		FontSize:  100,
+		FontSize:  50,
 		ImagePath: "./files/bolos.jpg",
 		Color:     "#FFFFFF",
 		Command:   "/bolo",
