@@ -46,4 +46,14 @@ var CommandMapping = []t.ImageConfig{
 		Color:     "#FFFFFF",
 		Command:   "/sasu",
 	},
+	t.ImageConfig{
+		Context: t.ImageContext{
+			Height: 381,
+			Width:  680,
+		},
+		FontSize:  100,
+		ImagePath: "./files/bolos.jpg",
+		Color:     "#FFFFFF",
+		Command:   "/bolo",
+	},
 }
