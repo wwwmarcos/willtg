@@ -20,7 +20,7 @@ func Will(m *tb.Message, b *tb.Bot) {
 			Height: 900,
 			Width:  1200,
 		},
-		FontSize:  30,
+		FontSize:  50,
 		ImagePath: "./files/bc.jpg",
 		Color:     "#FFFFFF",
 	}
