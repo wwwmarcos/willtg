@@ -6,6 +6,7 @@ type ImageConfig struct {
 	FontSize  float64
 	ImagePath string
 	Color     string
+	Command   string
 }
 
 // ImageContext define image size

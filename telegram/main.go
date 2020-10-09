@@ -27,9 +27,11 @@ func Handler(ctx context.Context, req Request) (Response, error) {
 		panic(err)
 	}
 
-	b.Handle("/will", func(m *tb.Message) {
-		c.Will(m, b)
-	})
+	for _, cmd := range c.CommandMapping {
+		b.Handle(cmd.Command, func(m *tb.Message) {
+			c.WriteImage(m, b, cmd)
+		})
+	}
 
 	var u tb.Update
 	if err = json.Unmarshal([]byte(req.Body), &u); err == nil {

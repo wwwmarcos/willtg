@@ -12,25 +12,14 @@ import (
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
-// Will command
-func Will(m *tb.Message, b *tb.Bot) {
-
-	imageConfig := &t.ImageConfig{
-		Context: t.ImageContext{
-			Height: 900,
-			Width:  1200,
-		},
-		FontSize:  50,
-		ImagePath: "./files/bc.jpg",
-		Color:     "#FFFFFF",
-	}
-
+// WriteImage command
+func WriteImage(m *tb.Message, b *tb.Bot, imageConfig t.ImageConfig) {
 	im, err := gg.LoadImage(imageConfig.ImagePath)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	textOnImage := strings.Replace(m.Text, "/will", "", 1)
+	textOnImage := strings.Replace(m.Text, imageConfig.Command, "", 1)
 
 	dc := gg.NewContext(imageConfig.Context.Width, imageConfig.Context.Height)
 	dc.LoadFontFace("./files/font.ttf", imageConfig.FontSize)
