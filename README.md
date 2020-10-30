@@ -14,7 +14,7 @@
 
 
 ## Demo
-<img alt="Demo-Image" src="https://raw.githubusercontent.com/eptaccio/willtg/master/assets/demo.jpeg" />
+<img alt="Demo-Image" src="https://raw.githubusercontent.com/eptaccio/willtg/4fc5c1acbbb8cf71c671c9ec20c74f8d8e15dd5c/assets/demo.jpeg" />
 
 ## Usage
 
