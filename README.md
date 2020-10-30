@@ -12,10 +12,6 @@
 
 ### 🏠 [Homepage](https://github.com/eptaccio/willtg#readme)
 
-
-## Demo
-<img alt="Demo-Image" src="https://raw.githubusercontent.com/eptaccio/willtg/master/assets/demo.jpeg" />
-
 ## Usage
 
 1. To install the dependencies:
