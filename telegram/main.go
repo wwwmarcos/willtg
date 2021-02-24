@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"log"
 	"os"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -24,8 +25,9 @@ func Handler(ctx context.Context, req Request) (Response, error) {
 		Token:       os.Getenv("BOT_TOKEN"),
 		Synchronous: true,
 	})
+
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 
 	for _, command := range c.CommandMapping {
