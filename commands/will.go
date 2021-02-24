@@ -45,5 +45,8 @@ func WriteImage(m *tb.Message, b *tb.Bot, imageConfig t.ImageConfig) {
 	dc.SavePNG(filePath)
 
 	photo := &tb.Photo{File: tb.FromDisk(filePath)}
-	b.SendAlbum(m.Chat, tb.Album{photo})
+	_, err = b.SendAlbum(m.Chat, tb.Album{photo})
+	if err != nil {
+		b.Send(m.Sender, err.Error())
+	}
 }
