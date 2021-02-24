@@ -1,7 +1,6 @@
 package commands
 
 import (
-	"log"
 	"os"
 	"path"
 	"strings"
@@ -16,7 +15,8 @@ import (
 func WriteImage(m *tb.Message, b *tb.Bot, imageConfig t.ImageConfig) {
 	im, err := gg.LoadImage(imageConfig.ImagePath)
 	if err != nil {
-		log.Fatal(err)
+		b.Send(m.Sender, err.Error())
+		return
 	}
 
 	textOnImage := strings.Replace(m.Text, imageConfig.Command, "", 1)
@@ -45,5 +45,8 @@ func WriteImage(m *tb.Message, b *tb.Bot, imageConfig t.ImageConfig) {
 	dc.SavePNG(filePath)
 
 	photo := &tb.Photo{File: tb.FromDisk(filePath)}
-	b.SendAlbum(m.Chat, tb.Album{photo})
+	_, err = b.SendAlbum(m.Chat, tb.Album{photo})
+	if err != nil {
+		b.Send(m.Sender, err.Error())
+	}
 }
