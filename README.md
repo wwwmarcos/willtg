@@ -23,6 +23,9 @@
 3. To deploy the project: 
 `make deploy`
 
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/eptaccio/willtg/issues).
 
 ## Author
 
@@ -32,10 +35,6 @@
 - Twitter: [@eptaccio](https://www.twitter.com/eptaccio)
 - Github: [@eptaccio](https://github.com/eptaccio)
 - LinkedIn: [@eptaccio](https://www.linkedin.com/in/eptaccio)
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/eptaccio/willtg/issues).
 
 ## Show your support
 
