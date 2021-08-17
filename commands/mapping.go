@@ -66,10 +66,10 @@ var CommandMapping = []t.ImageConfig{
 			Height: 500,
 			Width:  500,
 		},
-		FontSize:  20,
+		FontSize:  12,
 		ImagePath: "./files/dvd.jpg",
 		Color:     "#000000",
 		Command:   "/dvd",
-		AY:        -5,
+		AY:        -10,
 	},
 }
