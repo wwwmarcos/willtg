@@ -1,6 +1,6 @@
 service: will
 
-frameworkVersion: '2.26.0'
+frameworkVersion: '2.54.0'
 
 provider:
   name: aws
