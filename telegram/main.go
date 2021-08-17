@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 
@@ -33,7 +34,17 @@ func Handler(ctx context.Context, req Request) (Response, error) {
 	for _, command := range c.CommandMapping {
 		func(config t.ImageConfig) {
 			b.Handle(config.Command, func(m *tb.Message) {
-				c.WriteImage(m, b, config)
+				filePath, err := c.WriteImage(m.Text, fmt.Sprint(m.ID), config)
+				if err != nil {
+					b.Send(m.Sender, err.Error())
+					return
+				}
+
+				photo := &tb.Photo{File: tb.FromDisk(*filePath)}
+				_, err = b.SendAlbum(m.Chat, tb.Album{photo})
+				if err != nil {
+					b.Send(m.Sender, err.Error())
+				}
 			})
 		}(command)
 	}

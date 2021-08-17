@@ -7,6 +7,7 @@ type ImageConfig struct {
 	ImagePath string
 	Color     string
 	Command   string
+	AY        float64
 }
 
 // ImageContext define image size

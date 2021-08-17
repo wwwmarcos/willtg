@@ -7,19 +7,16 @@ import (
 
 	t "github.com/eptaccio/willtg/types"
 	"github.com/fogleman/gg"
-
-	tb "gopkg.in/tucnak/telebot.v2"
 )
 
 // WriteImage command
-func WriteImage(m *tb.Message, b *tb.Bot, imageConfig t.ImageConfig) {
+func WriteImage(text, ID string, imageConfig t.ImageConfig) (*string, error) {
 	im, err := gg.LoadImage(imageConfig.ImagePath)
 	if err != nil {
-		b.Send(m.Sender, err.Error())
-		return
+		return nil, err
 	}
 
-	textOnImage := strings.Replace(m.Text, imageConfig.Command, "", 1)
+	textOnImage := strings.Replace(text, imageConfig.Command, "", 1)
 
 	dc := gg.NewContext(imageConfig.Context.Width, imageConfig.Context.Height)
 	dc.LoadFontFace("./files/font.ttf", imageConfig.FontSize)
@@ -29,24 +26,21 @@ func WriteImage(m *tb.Message, b *tb.Bot, imageConfig t.ImageConfig) {
 	writeBoxWidth := float64(imageConfig.Context.Width) / 2
 	writeboxHeight := float64(imageConfig.Context.Height) / 2
 	lineSpacing := 1.5
-	lineWidth := float64(500)
+	lineWidth := float64(imageConfig.Context.Width - 20)
 
 	dc.DrawStringWrapped(
 		textOnImage,
 		writeBoxWidth,
 		writeboxHeight,
-		0.5, 1, // I will discover wtf is this
+		0.5,
+		imageConfig.AY,
 		lineWidth,
 		lineSpacing,
 		gg.AlignCenter)
 
-	fileName := string(m.ID) + ".png"
+	fileName := ID + ".png"
 	filePath := path.Join(os.TempDir(), fileName)
 	dc.SavePNG(filePath)
 
-	photo := &tb.Photo{File: tb.FromDisk(filePath)}
-	_, err = b.SendAlbum(m.Chat, tb.Album{photo})
-	if err != nil {
-		b.Send(m.Sender, err.Error())
-	}
+	return &filePath, nil
 }
