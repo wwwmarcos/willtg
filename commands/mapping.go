@@ -70,6 +70,6 @@ var CommandMapping = []t.ImageConfig{
 		ImagePath: "./files/dvd.jpg",
 		Color:     "#000000",
 		Command:   "/dvd",
-		AY:        -10,
+		AY:        -5,
 	},
 }
