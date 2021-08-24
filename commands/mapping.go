@@ -74,10 +74,10 @@ var CommandMapping = []t.ImageConfig{
 	},
 	{
 		Context: t.ImageContext{
-			Height: 868,
-			Width:  644,
+			Width:  868,
+			Height: 644,
 		},
-		FontSize:  20,
+		FontSize:  50,
 		ImagePath: "./files/amoedo.jpg",
 		Color:     "#FFFFFF",
 		Command:   "/amoedo",

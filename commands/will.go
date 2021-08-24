@@ -23,8 +23,8 @@ func WriteImage(text, ID string, imageConfig t.ImageConfig) (*string, error) {
 	dc.DrawImage(im, 0, 0)
 	dc.SetHexColor(imageConfig.Color)
 
-	writeBoxWidth := float64(imageConfig.Context.Width) / 2
-	writeboxHeight := float64(imageConfig.Context.Height) / 2
+	writeBoxWidth := float64(imageConfig.Context.Width / 2)
+	writeboxHeight := float64(imageConfig.Context.Height / 2)
 	lineSpacing := 1.5
 	lineWidth := float64(imageConfig.Context.Width - 20)
 

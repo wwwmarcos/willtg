@@ -1,7 +1,5 @@
 service: will
 
-frameworkVersion: '2.54.0'
-
 provider:
   name: aws
   runtime: go1.x
